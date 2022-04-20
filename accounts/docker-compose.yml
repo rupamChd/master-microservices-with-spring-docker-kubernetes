@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: rupamdocker/spring_boot_repo_1:rotaaccounts-2.0
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - rota-network
+    
+  loans:
+    image: rupamdocker/spring_boot_repo_1:rotacards-2.0
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - rota-network
+    
+  cards:
+    image: rupamdocker/spring_boot_repo_1:rotaloans-2.0
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - rota-network
+    
+networks:
+  rota-network:
